@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+    html,body{
+      height: 100%;
+      overflow: hidden;
+    }
+    .app-vip{
+      width: 90%;
+      margin: 0 auto;
+    }
+    .app-prgs-bar{
+      position: relative;
+      margin-top: 1.688rem;
+    }
+    .app-prgs-bar .prgs-inner{
+      position: relative;
+      width: 100%;
+      border-radius: 0.218rem;
+      border:1px solid #ced1d2;
+      box-sizing: content-box;
+      height: 0.4375rem;
+      background: #e6e6e6;
+      background: -prefix-linear-zgradient(top, #dddddd, #fff);
+      background: linear-gradient(to bottom, #dddddd, #fff);
+    }
+    .app-prgs-bar .prgs-inner .prgs-itm{
+      position: absolute;
+      top: -1.75rem;
+      height: 0.75rem;
+      line-height: 0.75rem;
+      font-size: 0.75rem;
+       /*-webkit-transform: scale(.75) translate(-50%,  0.4375rem);*/
+      color: #aa0d0d;
+    }
+      .app-prgs-bar .prgs-inner .prgs-itm i{
+          -webkit-transform: scale(.75) translate(-50%,  0.4375rem);
+          transform: scale(.75) translate(-50%,  0.4375rem);
+          font-size: .75rem;
+              display: inline-block;
+            font-style:normal;
+      }
+    .app-prgs-bar .prgs-inner .prgs-itm::after{
+      content: '';
+    display: block;
+    height: .5rem;
+    position: absolute;
+    width: 0.0625rem;
+    background: #ced1d2;
+    top: 1.25rem;
+
+    }
+    .prgs-itm.prgs-itm-vip1 {  left: 3.0%;}
+    .prgs-itm.prgs-itm-vip2 {  left: 12%;}
+    .prgs-itm.prgs-itm-vip3 {  left: 22%;}
+    .prgs-itm.prgs-itm-vip4 {  left: 34%;}
+    .prgs-itm.prgs-itm-vip5{  left: 48%;}
+    .prgs-itm.prgs-itm-vip6 {  left: 60%;}
+    .prgs-itm.prgs-itm-vip7 {  left: 74%;}
+    .prgs-itm.prgs-itm-vip8 {  left: 90%;}
+    .app-prgs-inf{
+      height: 100%;
+      background: -prefix-linear-zgradient(top, #faeba4, #ff9600);
+      background: linear-gradient(to bottom, #faeba4, #ff9600);
+      border-radius: 0.218rem;
+      -webkit-transition-duration: 4s;
+      transition-duration: 4s;
+      width: 0;
+    }
+    .app-prgs-inf.loaded{
+      -webkit-transition-duration: 4s;
+      transition-duration: 4s;
+
+    }
+    .app-propress-info{
+      margin-top: .75rem;
+      font-size: .75rem;
+      text-align: left;
+    }
+    .app-propress-info a{
+      float: right;
+    }
+    .app-vip-table{
+      width: 100%;
+      border: 0;
+      border-spacing: 0;
+      margin-top: 1.5rem;
+    }
+    .app-vip-table td,.app-vip-table th{
+      padding: .5rem .25rem;
+      text-align: center;
+    }
+    .app-vip-table th {
+        border-bottom: 1px solid #ececec;
+    }
+    .app-vip-table tr td{
+      border-bottom: 1px solid #ececec;
+      color: #ff9600;
+    }
+    .app-vip-table tr.last td {
+      border: 0;
+    }
+
+    .app-vip-table  tr.first .tbl-head{
+      border-top-left-radius: .25rem;
+    }
+    .app-vip-table tr.last  .tbl-head{
+      border-bottom-left-radius: .25rem;
+    }
+
+    .app-vip-table .tbl-head{
+      background: #ffbb10;
+        border-bottom: 1px solid #ecc35c;
+        color: #fff;
+    }
+    .app-vip-table th.tbl-head{
+      color: #bc0202;
+    }
+    .tbl-icon-x{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../icons/yaya_cha.png);
+      width: .75rem;
+      display: inline-block;
+      height: .75rem;
+    }
+    .app-vip-table .tbl-head-current {
+      height: 100%;
+      position: relative;
+      background: none;
+    }
+    .app-vip-table .tbl-head-current::after{
+      content: '.';
+      z-index: -999;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display:block;
+      padding: .5rem .25rem;
+      position: absolute;
+      left: -0.625rem;
+      background: -prefix-linear-zgradient(left, #df0000, #970101);
+      background: linear-gradient(to right, #df0000, #970101);
+    }
+    .popup-about{
+      background: rgba(255, 255, 255);
+    }
+    .rule-main{
+      position: relative;
+    }
+    .rule-title{
+      display: inline-block;
+      width: 100%;
+      position: relative;
+    }
+    .close-button {
+     position: absolute;
+     right: .5rem;
+     top: .0rem;
+     display: inline-block;
+     -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+     box-sizing: content-box;
+     width: 1rem;
+     height: 1rem;
+     border: none;
+     -webkit-border-radius: 1rem;
+     border-radius: 1rem;
+     font: normal 8em/normal Arial, Helvetica, sans-serif;
+     color: rgba(0,0,0,1);
+     -o-text-overflow: clip;
+     text-overflow: clip;
+     background: #ff0a0a;
+    }
+    .close-button::before {
+      display: inline-block;
+     -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+     box-sizing: content-box;
+     width: 0.72rem;
+     height: 0.12rem;
+     position: absolute;
+     content: "";
+     top: 0.44rem;
+     left: 0.16rem;
+     border: none;
+     font: normal 100%/normal Arial, Helvetica, sans-serif;
+     color: rgba(0,0,0,1);
+     -o-text-overflow: clip;
+     text-overflow: clip;
+     background: #ffffff;
+     text-shadow: none;
+     -webkit-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
+    }
+    .close-button::after {
+      display: inline-block;
+         -webkit-box-sizing: content-box;
+         -moz-box-sizing: content-box;
+         box-sizing: content-box;
+         width: 0.72rem;
+         height: 0.12rem;
+         position: absolute;
+         content: "";
+         top: 0.44rem;
+         left: 0.16rem;
+         border: none;
+         font: normal 100%/normal Arial, Helvetica, sans-serif;
+         color: rgba(0,0,0,1);
+         -o-text-overflow: clip;
+         text-overflow: clip;
+         background: #ffffff;
+         text-shadow: none;
+         -webkit-transform: rotateZ(-45deg);
+         transform: rotateZ(-45deg);
+    }
+    .popup-about{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: auto;
+      box-sizing: border-box;
+      padding: 1rem;
+      background: #fff;
+      -webkit-transform: translate3d(0,100%,0);
+      transform: translate3d(0,100%,0);
+      -webkit-transition-duration: .4s;
+      transition-duration: .4s;
+    }
+    .popup-about.in{
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+      -webkit-transition-duration: .4s;
+      transition-duration: .4s;
+    }
+
+    .popup-about.out{
+      -webkit-transform: translate3d(0,100%,0);
+      transform: translate3d(0,100%,0);
+      -webkit-transition-duration: .4s;
+      transition-duration: .4s;
+    }
+
+    .rule-main{
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+    .rule-content{
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-bottom: 1.4rem;
+    }
+
+    </style>
+  </head>
+  <body class="bg-white " style="overflow-y:auto">
+    <div class="app-main-page  "  >
+      <div class="app-vip">
+          <div class="app-prgs-bar">
+              <div class="prgs-inner">
+                    <span class="prgs-itm prgs-itm-vip1"><i>VIP1</i></span>
+                    <span class="prgs-itm prgs-itm-vip2"><i>VIP2</i></span>
+                    <span class="prgs-itm prgs-itm-vip3"><i>VIP3</i></span>
+                    <span class="prgs-itm prgs-itm-vip4"><i>VIP4</i></span>
+                    <span class="prgs-itm prgs-itm-vip5"><i>VIP5</i></span>
+                    <span class="prgs-itm prgs-itm-vip6"><i>VIP6</i></span>
+                    <span class="prgs-itm prgs-itm-vip7"><i>VIP7</i></span>
+                    <span class="prgs-itm prgs-itm-vip8"><i>VIP8</i></span>
+                    <div class="app-prgs-inf" data-width="30"></div>
+              </div>
+          </div>
+          <div class="app-propress-info">
+              <span>距下级经验</span>
+              <a href="#" data-popup=".popup-about" class="open-popup">VIP规则</a>
+          </div>
+          <div class="table app-level-table">
+              <table class="app-vip-table">
+                  <thead>
+                    <tr class="first">
+                      <th class="tbl-head ">平台特权</th>
+                      <th> 充值返利</th>
+                      <th> 赠送返利券</th>
+                      <th> 签到加速</th>
+                      <th> 补签特权</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="tbl-head">VIP0</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-head tbl-head-current">我的特权 <br> VIP1</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> 9折返利券X3</td>
+                      <td> 奖励1倍</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-head">VIP2</td>
+                      <td> 返利5%</td>
+                      <td> 9折返利券X3</td>
+                      <td> 奖励1.5倍</td>
+                      <td> 免费补签X1</td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-head">VIP3</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> 9折返利券X3</td>
+                      <td> 奖励1倍</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-head">VIP4</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                    </tr>
+                    <tr class="last">
+                      <td class="tbl-head">VIP4</td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                      <td> <span class="tbl-icon-x"></span></td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+    <div class=" popup-about">
+    <div class=" rule-main">
+      <h3 class="rule-title">VIP规则  <a href="#" class="close-popup close-button"> </a></h3>
+        <div class="rule-content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+  Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+ Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+  Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+ Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+  Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum mi quis felis scelerisque faucibus. Aliquam ut commodo justo. Mauris vitae pharetra arcu. Sed tincidunt dui et nibh auctor pretium. Nam accumsan fermentum sem. Suspendisse potenti. Nulla sed orci malesuada, pellentesque elit vitae, cursus lorem. Praesent et vehicula sapien, ut rhoncus quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae mi nec lorem aliquet venenatis quis nec nibh. Aenean sit amet leo ligula. Fusce in massa et nisl dictum ultricies et vitae dui. Sed sagittis quis diam sed lobortis. Donec in massa pharetra, tristique purus vitae, consequat mauris. Aliquam tellus ante, pharetra in mattis ut, dictum quis erat.
+Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+ Ut ac lobortis lacus, non pellentesque arcu. Quisque sodales sapien malesuada, condimentum nunc at, viverra lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eu pulvinar turpis, id tristique quam. Aenean venenatis molestie diam, sit amet condimentum nisl pretium id. Donec diam tortor, mollis in vehicula id, vehicula consectetur nulla. Quisque
+        </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/zepto.min.js">
+  </script>
+  <script type="text/javascript">
+    $('.open-popup').on('click', function(){
+        $($(this).data('popup')).addClass('in');
+    });
+    $('.close-button').on('click', function(){
+        $('.popup-about').removeClass('in');
+    });
+
+    var credits = 12800; // 当前会员积分数. 服务器端赋值
+    $(function(){
+      $('.app-prgs-inf').addClass('loaded');
+      setTimeout(function(){
+        $('.app-prgs-inf').css({
+          width: getProgressWidth(credits)
+        });
+      });
+    });
+    function getProgressWidth(credits) {
+        var width = 0;
+        if(credits <= 300)
+        {
+           width =  3 * (credits / 300);
+        } else if( credits <= 600 ) {
+          width = 3 + (12 - 3) * (credits / 600);
+        } else if(credits <= 1200) {
+          width = 12 + (22 - 12) * (credits / 1200);
+        } else if(credits <= 2800) {
+          width = 22 + (34 - 22) * (credits / 2800);
+        } else if(credits <= 6400) {
+          width = 34 + (48 - 34) * (credits / 6400);
+        } else if(credits <= 12800) {
+          width = 48 + (60 - 48) * (credits / 12800);
+        } else if(credits <= 60000) {
+          width = 74 + (74 - 60) * (credits / 60000);
+        } else if(credits <= 128000) {
+          width = 90 + (90 - 74) * (credits / 128000);
+        }
+        return width + '%';
+    }
+
+  </script>
+  </body>
+</html>

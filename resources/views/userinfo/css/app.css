@@ -1,0 +1,353 @@
+html,body {
+  margin: 0 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.header{
+
+}
+.main{
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #efeff4;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.navbar , .header {
+    height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 17px;
+    position: relative;
+    margin: 0;
+    z-index: 500;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.swiper-container {
+    width: 100%;
+    height:  100%;
+}
+
+.navbar .subnavbar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: -1px;
+    z-index: 20;
+    box-sizing: border-box;
+    padding: 0 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: absolute;
+    top:0.625rem;
+}
+.navbar, .subnavbar, .toolbar {
+  background: none;
+}
+.navbar {
+  height: 4.315rem;
+  background: #f1f1f1;
+}
+.buttons-row{
+  width: 100%;
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: none;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.buttons-row .button:first-child{
+  border: none;
+}
+.button.button-fill {
+    color: #fff;
+    background: #007aff;
+    border-color: transparent;
+}
+.subnavbar{
+  height: 3.69rem;
+  border-bottom: none;
+}
+.navbar:after, .subnavbar:after{
+  background: none;
+}
+.buttons-row .button {
+  border-radius: 0;
+  border-left-width: 0;
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  border: none;
+  background: none;
+  height: auto;
+  width: 25%;
+
+}
+.button {
+  border: 1px solid #007aff;
+    color: #007aff;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    line-height: 27px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: 0 0;
+    padding: 0 10px;
+    margin: 0;
+    height: 29px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+}
+.buttons-row .button .tbtn{
+    opacity: 1;
+}
+.buttons-row .button img{
+
+}
+.buttons-row .button span {
+    color: #666666
+
+}
+.buttons-row .button.active .tbtn{
+    opacity: .8;
+}
+.tb1.active span{
+  color: #35b3ca;
+}
+.tb2.active span{
+  color: #59ca6c;
+}
+.tb3.active span{
+  color: #f5c55f;
+}
+.tb4.active span{
+  color: #e07a4e;
+}
+.header{
+      position: absolute;
+}
+.page {
+    padding-top: 4.313rem;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.page-content{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.page-content * {
+    -webkit-transform: translate3d(0,0,0);
+}
+.frame{
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+.ifm-warp {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tbtn{
+  width: 2.063rem; height: 2.063rem; background-repeat: no-repeat; background-size: 100% 100%; margin: 0 auto;
+}
+.tbtn-personal{ background-image: url(../icons/yaya_personal.png);}
+.tbtn-recommend{ background-image: url(../icons/yaya_recommendation1.png);}
+.tbtn-game{ background-image: url(../icons/yaya_game1.png);}
+.tbtn-gift{ background-image: url(../icons/yaya_gift1.png);}
+.acot-bal-icon{ background-image: url(../icons/yaya_balance.png);}
+
+.app-main-page{
+  padding-top: 1.875rem;
+}
+
+.iframe{
+  border: 0;
+
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app-accordion{
+
+}
+.app-accordion .accordion-item-toggle{
+  position: relative;
+  padding-left: 2.8rem;
+}
+.app-accordion .accordion-item-toggle h4 span{
+    float: right;
+}
+.app-accordion .accordion-item-toggle h4 p{
+  display: inline-block;
+  margin: 0;
+  line-height: 100%;
+}
+.app-accordion .accordion-item-toggle h4{
+   color: #919191;
+}
+
+.app-accordion .accordion-item-toggle h4 .app-acc-icon{
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 1rem 0;
+  transition:.5s transform ease;
+  vertical-align: middle;
+}
+
+.app-accordion .accordion-item.accordion-item-expanded h4 .app-acc-icon{
+  transform: rotateZ(-180deg);
+
+}
+.app-accordion .accordion-item-toggle h4 .app-acc-icon::before{
+  position: absolute;
+  content: '';
+  display: block;
+  top: .4rem;
+  left: 0rem;
+  width: .6rem;
+  background: #919191;
+  height: .12rem;
+  transform: rotateZ(-45deg);
+
+}
+.app-acc-foot{
+  text-align: center;
+  margin:2rem 0;
+  font-size: 0;
+}
+.app-acc-foot .f-left, .app-acc-foot .f-right{
+  width: 50%;
+  display: inline-block;
+
+}
+
+.app-acc-foot .color-app-yel.btn-strate{
+    background-image: url(../icons/yaya_strategy.png);
+}
+.app-acc-foot .color-app-yel.btn-bbs{
+    background-image: url(../icons/yaya_activity.png);
+
+}
+.app-acc-foot .color-app-yel{
+  padding-left: 2rem;
+  display: inline-block;
+  background: #ff6c00;
+
+  background-repeat: no-repeat;
+  background-position:0.5rem center;
+  background-size: 1.25rem 1.25rem;
+
+}
+.app-sec-foot{
+  margin: 2rem auto 0;
+  width: 80%;
+
+}
+.app-sec-foot .color-app-yel{
+  display: inline-block;
+  background: #ff6c00;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.app-sec-note {
+  width: 80%;
+  margin: 0  auto;
+}
+.app-accordion .accordion-item-toggle h4 .app-acc-icon::after{
+  position: absolute;
+  content: '';
+  top: .4rem;
+  right:0rem;
+  display: block;
+  width: .6rem;
+  background: #919191;
+  height: .12rem;
+  transform: rotateZ(45deg);
+}
+.accordion-item {
+  padding: .5rem 0;
+  border-bottom: 1px solid #dbdddf;
+  box-sizing: border-box;
+    position: relative;
+}
+.accordion-item{
+  transition:.3s height;
+}
+.open .accordion-item-content{
+   height: auto;
+
+}
+.accordion-item-content{
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  font-size: 14px;
+
+  padding-left: 2.8rem;
+}
+.accordion-item-content p{
+  padding: 0;
+  margin: 0;
+  display: block;
+  margin: 20px;
+}
+.app-acc-flag{
+  width: 2rem;
+  padding: 0 .25rem;
+  color: #ffffff;
+  background: #ff6c00;
+  border-radius: .125rem;
+  position: absolute;
+  left: 0rem;
+}
+.app-accordion{
+ margin: 0;
+}

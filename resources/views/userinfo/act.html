@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <link rel="stylesheet" href="css/app.css">
+
+  </head>
+  <body class="bg-white" style="overflow-y:auto">
+    <div class=" xssas">
+      <div class="content-block accordion-list app-accordion">
+      <div class="accordion-item open">
+        <div class="accordion-item-toggle">
+          <div class="app-acc-flag">置顶</div>
+          <h4>活动公告，点开展示内容<i class="app-acc-icon"></i> <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不被他连招，否则可能会被一套带走。...</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-item-toggle">
+            <div class="app-acc-flag">最新</div>
+          <h4><p>活动公告，点开展示内容</p>    <i class="app-acc-icon"></i>  <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不...</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-item-toggle">
+            <div class="app-acc-flag">最新</div>
+          <h4><p>活动公告，点开展示内容</p>    <i class="app-acc-icon"></i>  <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不...</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-item-toggle">
+            <div class="app-acc-flag">最新</div>
+          <h4><p>活动公告，点开展示内容</p>    <i class="app-acc-icon"></i>  <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不...</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-item-toggle">
+            <div class="app-acc-flag">最新</div>
+          <h4><p>活动公告，点开展示内容</p>    <i class="app-acc-icon"></i>  <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不...</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-item-toggle">
+            <div class="app-acc-flag">最新</div>
+          <h4><p>活动公告，点开展示内容</p>    <i class="app-acc-icon"></i>  <span>2017/4/4  14:49</span></h4>
+        </div>
+        <div class="accordion-item-content">
+          <p>不过距离上次交手，他并没有太大长进。除了会在战场两侧放两个
+大范围持续火焰阵之外，他的攻击方式并没太大变化。只需要照老
+方法打即可。不过还是得注意不...</p>
+        </div>
+      </div>
+      </div>
+      <div class="app-acc-foot">
+        <div class="f-left">
+<a href="#" class="button button-big  button-fill color-app-yel btn-strate">游戏攻略</a>
+        </div>
+        <div class="f-right">
+            <a href="#" class="button button-big  button-fill color-app-yel btn-bbs">游戏论坛</a>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/zepto.min.js">
+    </script>
+    <script type="text/javascript">
+
+      $(function(){
+        $('.accordion-item-toggle').on('click', function() {
+          if( $(this).parent().hasClass('open')) {
+               $(this).parent().removeClass('open');
+          } else {
+              $('.accordion-item').removeClass('open');
+                $(this).parent().addClass('open');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

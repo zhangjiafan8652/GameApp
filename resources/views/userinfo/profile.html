@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>asdasd</title>
+        <link rel="stylesheet" href="css/normalize.css">
+  </head>
+  <style media="screen">
+  .button {
+      border: 1px solid #007aff;
+      color: #007aff;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+      line-height: 27px;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      background: 0 0;
+      padding: 0 10px;
+      margin: 0;
+      height: 29px;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      outline: 0;
+  }
+  .button.button-fill {
+    color: #fff;
+    background: #007aff;
+    border-color: transparent;
+}
+.button.button-big {
+    font-size: 17px;
+    height: 44px;
+    line-height: 42px;
+}
+  .tbtn{
+    width: 2.063rem; height: 2.063rem; background-repeat: no-repeat; background-size: 100% 100%; margin: 0 auto;
+  }
+  .tbtn-personal{ background-image: url(icons/yaya_personal.png);}
+  .tbtn-recommend{ background-image: url(icons/yaya_recommendation1.png);}
+  .tbtn-game{ background-image: url(icons/yaya_game1.png);}
+  .tbtn-gift{ background-image: url(icons/yaya_gift1.png);}
+  .acot-bal-icon{ background-image: url(icons/yaya_balance.png);}
+  .app-account {
+    margin: 0;
+    background: #fff;
+    padding:  0.6875rem 0;
+  }
+
+  .acot-avatar, .acot-bal-icon{
+    height: 2.813rem;
+    width: 2.813rem;
+    float: left;
+    background-size: cover;
+  }
+  .acot-info {
+    height: 2.813rem;
+  }
+  .acot-txt {
+    height: 2.813rem;
+    padding-left: 3.375rem;
+  }
+  .acot-txt h4{
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: normal;
+  }
+  .acot-txt h4 span{
+    color: #ec7600;
+
+  }
+  .acot-avatar img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
+  .acot-balance{
+      box-sizing: border-box;
+    width: 50%;
+    margin-left: 50%;
+    padding-left: 0.8125rem;
+  }
+  .acot-info{
+    padding-left: 1.375rem;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+  }
+  .rpoint{
+    position: relative;
+  }
+  .r-txt{
+    color: red;
+    padding-left: .5rem;
+  }
+  .rpoint::after{
+    content: ' ';
+    display: block;
+    background: red;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    position: absolute;
+    right: -0.25rem;
+    top: -0.25rem;
+  }
+
+  /**
+  apps
+  */
+  .app-items{
+    margin-top: 0.625rem;
+    font-size: 0;
+  }
+  .app-items .app-item {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    color: #666666;
+    box-sizing: border-box;
+
+  }
+  .app-items .app-item span{
+    display: inline-block;
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+  }
+  .itm-icon{
+    width: 2.375rem;
+    height: 2.375rem;
+    margin: 0 auto;
+    background-size: cover;
+  }
+  .itm-icon.itm-kf {  background-image: url(icons/yaya_kefuzhongxin.png);}
+  .itm-icon.itm-sec {  background-image: url(icons/yaya_safe.png);}
+  .itm-icon.itm-bil {  background-image: url(icons/yaya_bill.png);}
+  .itm-icon.itm-charge {  background-image: url(icons/yay_record.png);}
+  .itm-icon.itm-vip {  background-image: url(icons/yaya_vip.png);}
+  .button.color-app-yel {
+    height: 2.188rem;
+    line-height: 2.188rem;
+    background: #f6a772;
+  }
+  .app-foot{
+    width: 10rem;
+    margin: 3rem auto 0;
+  }
+  </style>
+  <body>
+    <div class="main-wrap">
+
+            <div class="content-block app-account">
+                <div class="acot-info">
+                    <div class="acot-avatar">
+                      <img src="img/avatar1.png" alt="">
+                    </div>
+                    <div class="acot-txt">
+                        <h4>账&nbsp;&nbsp;&nbsp;&nbsp;号 : <span>siri43</span></h4>
+                        <h4>vip等级 : <span>VIP8</span> </h4>
+                    </div>
+                </div>
+                <div class="acot-balance">
+                    <div class="acot-bal-icon"></div>
+                    <div class="acot-txt">
+                        <h4>YY币</h4>
+                        <h4>  <span class="rpoint">剩余8888个 </span> <a class="r-txt" href="#">充值</a> </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="app-items">
+                  <a class="app-item" href="#" ><div class="itm-icon itm-kf"></div><span>客服中心</span></a>
+                  <a class="app-item" href="sec.html" ><div class="itm-icon itm-sec"></div><span>账号安全</span></a>
+                  <a class="app-item" href="#" ><div class="itm-icon itm-bil"></div><span>消费记录</span></a>
+                  <a class="app-item" href="#" ><div class="itm-icon itm-charge"></div><span>充值记录</span></a>
+                  <a class="app-item" href="vip.html" ><div class="itm-icon itm-vip"></div><span>VIP特权</span></a>
+            </div>
+            <div class="app-foot">
+              <a href="#" class="button button-big  button-fill color-app-yel">切换账号</a>
+            </div>
+
+    </div>
+
+  </body>
+</html>

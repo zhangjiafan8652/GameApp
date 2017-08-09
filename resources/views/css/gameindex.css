@@ -1,0 +1,61 @@
+#gameindex_content {
+	margin: auto;
+	padding: 0;
+	width: 100%;
+}
+
+#gameindex_top {
+	width: 100%;
+	height: 40%;
+}
+
+
+/*头部右边布局*/
+
+#gameindex_top_left {
+	width: 60%;
+	height: 100%;
+	background-color: aquamarine;
+	float: left;
+}
+
+#gameindex_top_right {
+	width: 40%;
+	height: 100%;
+	background-color: deepskyblue;
+	float: left;
+	text-align: center;
+}
+
+#gameindex_top_headpicture {
+	
+	
+	margin: auto;
+	margin-top: 8%;
+	background-color: red;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 7rem;
+	background: url(../img/avatar.jpg) round;
+}
+
+#gameindex_top_rolename,
+#gameindex_top_userid,
+#gameindex_top_roleid {
+	margin: auto;
+	margin-top: 1%;
+	width: 100%;
+	
+	
+	text-align: center;
+	font-size: 1.1rem;
+	color: white;
+}
+
+.gameindex_listitem {
+	width: 30%;
+	height: 3rem;
+	float: left;
+	line-height: 3rem;
+	font-size: 1rem;
+}
