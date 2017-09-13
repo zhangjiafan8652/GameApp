@@ -32,7 +32,6 @@ class UserinfoController extends CommonController
         $user=GameUser::find($reuid);
         if ($user!=null){
 
-          //  $request->session()->push('user.teams', 'developers');
             session(['uid'=>$reuid]);
            $mgameRole=GameRole::where('userid', $user->gameuser_id)->get();
          //  echo '账号'.($mgameRole);
