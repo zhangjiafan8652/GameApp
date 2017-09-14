@@ -51,6 +51,8 @@ function autoLeftNav() {
             if ($(window).width() > 1024) {
                 $('.tpl-content-wrapper').addClass('active');
             }
+
+
         }
     })
 

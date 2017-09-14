@@ -16,6 +16,14 @@ class LoginController extends CommonController
        return view('admin.login');
     }
 
+    public function register()
+    {
+
+
+        return view('admin.signup');
+    }
+
+
     public function code()
     {
         $code=new \Code();

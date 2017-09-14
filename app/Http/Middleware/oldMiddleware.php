@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 class oldMiddleware
 {
@@ -16,10 +18,16 @@ class oldMiddleware
     public function handle($request, Closure $next)
     {
 
-        if ($request->input('age')>200){
-            
-            return redirect('');
+        $value = Session::get('userid', 'default');
+
+        Log::info('登陆后台经过了这里'.$value);
+        if ($value=='default'){
+            Log::info('要去login了'.$value);
+           // return redirect('admin/login');
+            return $next($request);
+        }else{
+            return $next($request);
         }
-        return $next($request);
+
     }
 }
