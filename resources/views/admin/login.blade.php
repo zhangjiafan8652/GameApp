@@ -24,14 +24,14 @@
 
 
 
-                <form class="am-form tpl-form-line-form">
+                <form class="am-form tpl-form-line-form" action="{{ url("admin/tologin") }}" method="post">
                     <div class="am-form-group">
-                        <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入账号">
+                        <input type="text" class="tpl-form-input" id="uid" name="username" placeholder="请输入账号">
 
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" id="user-name" placeholder="请输入密码">
+                        <input type="password" class="tpl-form-input" id="password" name="password" placeholder="请输入密码">
 
                     </div>
                     <div class="am-form-group tpl-login-remember-me">
@@ -47,13 +47,17 @@
 
                     <div class="am-form-group">
 
-                        <button type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+                        <input type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn"/>
 
                     </div>
+                    <a type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn" href="{{ url("admin/signup") }}">注册账号</a>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+
+    </script>
     <script src="assets/js/amazeui.min.js"></script>
     <script src="assets/js/app.js"></script>
 @endsection

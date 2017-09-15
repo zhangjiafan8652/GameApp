@@ -15,7 +15,8 @@ class VerifyCsrfToken extends BaseVerifier
         //
         "apigameuser/save",
         "apigameuser/login",
-         "api*/*"
+         "api*/*",
+        "admin*/*"
 
     ];
 }

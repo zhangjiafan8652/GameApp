@@ -31,18 +31,27 @@ Route::any('/apigamefuben/list', 'UserController@fubenlist');
 Route::any('/apigamemonster/list', 'UserController@monsterlist');
 Route::any('/apigamemonster/setroledata', 'UserController@setroledata');
 
-Route::any('/userinfo', 'UserinfoController@index');
-Route::group(['middleware' => ['web']], function () {
-    Route::get('admin', 'Admin\IndexController@index');
-    Route::get('admin/index', 'Admin\IndexController@index');
 
-    Route::get('admin/user', 'Admin\UserListController@index');
 
-    Route::get('admin/content', 'Admin\IndexController@content');
+
+Route::group(['middleware' => ['nofilterlogin']], function () {
     Route::get('admin/signup', 'Admin\IndexController@signup');
     Route::get('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');
+    Route::any('admin/tologin', 'Admin\LoginController@tologin');
     Route::get('admin/getcode', 'Admin\LoginController@getcode');
+
+});
+
+Route::any('/userinfo', 'UserinfoController@index');
+
+//需要经过  Kernel.php 中login 组的中间件
+Route::group(['middleware' => ['login']], function () {
+    Route::get('admin', 'Admin\IndexController@index');
+    Route::get('admin/index', 'Admin\IndexController@index');
+    Route::get('admin/user', 'Admin\UserListController@index');
+    Route::get('admin/content', 'Admin\IndexController@content');
+
 
     //菜单管理
     Route::get('admin/sys_menu/ceshi', 'Admin\Sys_MenuListController@datalist');
@@ -99,3 +108,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/gameconfigsave', 'Admin\GameConfigListController@save');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
