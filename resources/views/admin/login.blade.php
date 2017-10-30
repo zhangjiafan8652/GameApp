@@ -22,7 +22,9 @@
 
                 </div>
 
-
+                @if(session('message'))
+                    <p style="color:red">{{session('message')}}</p>
+                @endif
 
                 <form class="am-form tpl-form-line-form" action="{{ url("admin/tologin") }}" method="post">
                     <div class="am-form-group">

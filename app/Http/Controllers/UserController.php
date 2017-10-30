@@ -172,7 +172,7 @@ class UserController extends CommonController
         $userdata= GameFuben::paginate(40);
         $this->gameresponse["status"]="200";
         $this->gameresponse["message"]="用户已经存在";
-       $this->gameresponse["pdlist"]=$userdata;
+        $this->gameresponse["pdlist"]=$userdata;
 
         return json_encode($this->gameresponse);
        // return $userdata->data();
