@@ -24,7 +24,7 @@ class CheckIsLogin
               return redirect('admin/login');
             // return $next($request);
         }else{
-
+            //return redirect('admin/index');
         }
 
         return $next($request);
