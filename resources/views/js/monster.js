@@ -7,15 +7,17 @@ var monster_vue = new Vue({
 
 		],
 		monster: {
-			"gamemonsterId": "88f3ea78b3784e6cb6483fcc40161c51",
-			"monsterExperience": "2fd23d4a734c45c0a1e3f9a5cdc01d44",
-			"monsterId": "小火鸡",
-			"monsterLevel": 3,
-			"monsterMagicAttack": "2fd23d4a734c45c0a1e3f9a5cdc01d44",
-			"monsterName": "射手",
-			"monsterPhysicalAttack": "2fd23d4a734c45c0a1e3f9a5cdc01d44",
-			"monsterPhysicalProtect": "射手",
-			"blood": 0
+            "belongfuben": "1",
+            "blood": 100,
+            "gamemonster_id": "a8d8d2adfaa14d50a293756a1d7cded1",
+            "monsterexperience": 100,
+            "monsterid": 1,
+            "monsterlevel": 1,
+            "monstermagicattack": 100,
+            "monstermagicprotect": 49,
+            "monstername": "三眼猴",
+            "monsterphysicalattack": 100,
+            "monsterphysicalprotect": 50
 		}
 
 	},

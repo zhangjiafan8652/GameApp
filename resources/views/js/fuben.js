@@ -51,7 +51,7 @@ function Fuben() {
 };
 //去monster页面
 function gotofubenlist(fubenid){
-	console.log("调往副本list页面"+fubenid);
+	console.log("调往怪物list页面"+fubenid);
 	$.router.load('#monster');
 	var monsterc=new Monster();
 	monsterc.monster_tosetmonsterdata(fubenid);

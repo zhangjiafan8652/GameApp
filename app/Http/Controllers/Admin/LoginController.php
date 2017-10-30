@@ -28,7 +28,7 @@ class LoginController extends CommonController
 
        $password= md5($password);
         if($password==$user[0]->password){
-           redirect(("user"))
+           redirect(("user"));
         }else{
             dd(md5($password));
         }
