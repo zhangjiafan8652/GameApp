@@ -77,6 +77,5 @@ function initGameindex() {
 function gameindex_gotofuben() {
 	console.log("调往副本");
 	$.router.load('#fuben');
-	var fubenc = new Fuben();
-	fubenc.fuben_tosetfubendata();
+
 }

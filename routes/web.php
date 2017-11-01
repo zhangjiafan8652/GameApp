@@ -31,6 +31,8 @@ Route::any('/apigamefuben/list', 'UserController@fubenlist');
 Route::any('/apigamemonster/list', 'UserController@monsterlist');
 Route::any('/apigamemonster/setroledata', 'UserController@setroledata');
 
+Route::any('/apigame/role_attack', 'GameController@roleattack');
+
 
 
 

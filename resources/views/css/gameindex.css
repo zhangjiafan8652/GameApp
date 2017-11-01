@@ -2,6 +2,8 @@
 	margin: auto;
 	padding: 0;
 	width: 100%;
+	font-size: 1.1rem;
+	background: url(../img/fugupicture1.jpg) ;
 }
 
 #gameindex_top {
@@ -15,14 +17,14 @@
 #gameindex_top_left {
 	width: 60%;
 	height: 100%;
-	background-color: aquamarine;
+	/*background-color: aquamarine;*/
 	float: left;
 }
 
 #gameindex_top_right {
 	width: 40%;
 	height: 100%;
-	background-color: deepskyblue;
+/*	background-color: deepskyblue;*/
 	float: left;
 	text-align: center;
 }

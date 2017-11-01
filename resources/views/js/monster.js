@@ -2,7 +2,7 @@ var monster_vue = new Vue({
 	el: '#monster',  
 	data: {
 		message: '游戏主页',
-		attack_message: 'nidongde',
+		attack_message: '卷绢撅攫抉掘倔爵觉决诀绝均',
 		monsters: [
 
 		],
@@ -24,7 +24,7 @@ var monster_vue = new Vue({
 	methods: {  
 		
 		vue_monster_attack: function(id) {
-			console.log('123');
+			console.log(id);
 			fubenlist_attack(id); //调用本页面的攻击
 		}
 	}
@@ -47,6 +47,7 @@ function monster_tosetmonsterdata(fubenid) {
 		if(JSON.parse(response).status==200){
 			monster_vue.monsters = JSON.parse(response).mgamemonsters;
 		}
+        $youziku.submit();
 		
 	});
 
@@ -55,7 +56,7 @@ function monster_tosetmonsterdata(fubenid) {
 //玩家攻击野怪
 function fubenlist_attack(monsterid) {
 	console.log('攻击的野怪id' + monsterid);
-	$.post(role_attackurl, { GAMEMONSTER_ID: monsterid, isfirstattack: "1" }, function(response) {
+	$.post(role_attackurl, { monsterid: monsterid, isfirstattack: "1" }, function(response) {
 		// process response
 		console.log(response);
 		// JSON.parse(response);
@@ -74,7 +75,7 @@ function fubenlist_attack(monsterid) {
 }
 //野怪攻击玩家
 function monster_attack_player(){
-	$.post(monster_attackurl, { GAMEMONSTER_ID: "12", isfirstattack: "1" }, function(response) {
+	$.post(monster_attackurl, { monsterid: "12", isfirstattack: "1" }, function(response) {
 		// process response
 		console.log(response);
 		// JSON.parse(response);
@@ -95,7 +96,7 @@ function monster_attack_player(){
 //玩家第二次攻击野怪
 function attack_monster() {
 	
-	$.post(role_attackurl, { GAMEMONSTER_ID: "123", isfirstattack: "0" }, function(response) {
+	$.post(role_attackurl, { monsterid: "123", isfirstattack: "0" }, function(response) {
 		// process response
 		console.log(response);
 		// JSON.parse(response);

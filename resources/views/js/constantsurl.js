@@ -3,16 +3,19 @@ var rooturl = "http://www.gameworld.com"; //根路径
 var registerurl = rooturl + "/apigameuser/save"; //创建用户
 var loginurl = rooturl + "/apigameuser/login"; //登陆
 var getprofessionurl = rooturl + '/apigameprofession/list'; //获取职业列表
-var createroleurl = rooturl + '/apigamerole/save'; //创建角色   
+var createroleurl = rooturl + '/apigamerole/save'; //创建角色
+var refreshroleurl = rooturl + '/apigamerole/refresh'; //刷新角色数据
 var role_attackurl = rooturl + '/apigame/role_attack'; //玩家攻击怪物
 var monster_attackurl = rooturl + '/apigame/monster_attack'; //怪物攻击玩家
 var getfubenlisturl = rooturl + '/apigamefuben/list'; //获取副本列表
 var getmosterlisturl = rooturl + '/apigamemonster/list'; //获取怪物列表
+var temptext = "填入密码登陆三眼猴子黄口稻草人狂奔的小龙注册输入打架";//用到的字体
 var LOGINPAGE = "loginpage";
 var GAMEINDEX = "gameindex";
 var FUBEN = "fuben";
 var MONSTER = "monster";
 var CREATEROLE = "createrole";
+var tempfubenid='';
 var gamerole = {
     "agile": 0,
     "allexperience": 0,
@@ -46,18 +49,22 @@ var gamerole = {
 
 $(document).on("pageInit", function(e, pageId, $page) {
 	console.log("当前加载的是：" + pageId);
+
 	if(pageId == GAMEINDEX) {
 		//生成游戏页面对象
 		var mgameindex = new GameIndex();
 		//调用游戏页面设置vue数据方法
 		mgameindex.init();
+
 		//
 	}
 	if(pageId == FUBEN) {
-
+        var fubenc = new Fuben();
+        fubenc.fuben_tosetfubendata();
 	}
 	if(pageId == MONSTER) {
-
+        var monsterc=new Monster();
+        monsterc.monster_tosetmonsterdata(tempfubenid);
 	}
 	if(pageId == CREATEROLE) {
 

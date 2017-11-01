@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 require_once 'resources\org\Code.class.php';
 
 class LoginController extends CommonController
@@ -30,6 +31,8 @@ class LoginController extends CommonController
         $user=DB::select('select * from sys_user where username = ?', [$username]);
 
        $password= md5($password);
+        Log::info("密码：".$password."后台的密码".$user[0]->password);
+
         if(empty($user)){
 
             return  back()->with('message', '用户为空');
@@ -44,8 +47,7 @@ class LoginController extends CommonController
            // dd(md5($password));
             return  back()->with('message', '密码错误');;
         }
-     //  dd($user[0]->password);
-     //   dd( $user);
+
     }
 
     public function signup()

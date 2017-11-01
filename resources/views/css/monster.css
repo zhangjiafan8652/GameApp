@@ -1,3 +1,6 @@
+#monster_content{
+	background: url(../img/fugupicture3.jpg) ;
+}
 .monster_yeguai{
 	margin: 20px;
 	
@@ -7,17 +10,28 @@
 .monster_yeguai_monstername{
 	width: 30%;
 	float: left;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	line-height: 3rem;
 	text-align: center;
 }
 .monster_yeguai_monsterattack ,.monster_yeguai_monsterguaji {
 	margin-top: 0.5rem;
 	margin-left: 0.5rem;
-	width: 30%;
+	width: 20%;
 	font-size: 1rem;
 	height: 2rem;
 	line-height: 2rem;
 	float: left;
 	text-align: center;
+}
+
+.monster_button.button.monster_yeguai{
+	border: 1px solid #000000;
+	color: #000000;
+	font-size: 1.5rem;
+}
+.monster_button.button.button-round{
+	border: 1px solid #000000;
+	color: #000000;
+	font-size: 1.5rem;
 }

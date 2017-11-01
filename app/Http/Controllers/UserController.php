@@ -112,6 +112,7 @@ class UserController extends CommonController
             $mgamerole->userid=session('uid');
             $mgamerole->rolename=$rolename;
             $mgamerole->blood=$professon->base_blood;
+            $mgamerole->maxblood=$professon->base_blood;
             $mgamerole->megic_attack=$professon->base_megic_attack;
             $mgamerole->megic_protect=$professon->base_megic_protect;
             $mgamerole->physical_attack=$professon->base_physical_attack;
@@ -185,7 +186,7 @@ class UserController extends CommonController
         $input=Input::all();
         $belongfuben=$input['belongfuben'];
 
-        $monsters= GameMonster::where('belongfuben', $belongfuben)
+        $monsters= GameMonster::where('belongfuben', $belongfuben)->orderBy('monsterlevel')
 
             ->get();;
        $this->gameresponse["status"]="200";

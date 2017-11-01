@@ -57,7 +57,7 @@
 								<li>
 									<div class="item-content">
 										<div class="item-inner">
-											<div class="item-title label">uid</div>
+											<div class="item-title label">玩家:</div>
 											<div class="item-input">
 												<input type="text" id="login_uid" placeholder="填入登陆uid">
 											</div>
@@ -67,7 +67,7 @@
 								<li>
 									<div class="item-content">
 										<div class="item-inner">
-											<div class="item-title label">password</div>
+											<div class="item-title label">密码:</div>
 											<div class="item-input">
 												<input type="email" id="login_password" placeholder="填入密碼">
 											</div>
@@ -78,7 +78,7 @@
 							</ul>
 							<p onclick="go_login()">
 
-								<a href="#" class="button button-big button-round">登陆 </a>
+								<a href="#" class="ab button button-big button-round">登陆 </a>
 							</p>
 						</div>
 
@@ -127,28 +127,27 @@
 				<div class="content" id="gameindex_content">
 					<div id="gameindex_top">
 						<div id="gameindex_top_left">
-
+                            <div id="gameindex_ROLEID">用户名:{{userdatas.rolename}}</div>
 							<div id="gameindex_ROLEID">角色id：{{userdatas.gamerole_id}}</div>
 							<div id="gameindex_BLOOD">血量：{{userdatas.blood}}</div>
 							<div id="gameindex_LEVEL">等级：{{userdatas.level}}</div>
 							<div id="gameindex_MONEY">金币：{{userdatas.money}}</div>
 							<div id="gameindex_PROFESSION">职业：{{userdatas.profession}}</div>
-							<div id="gameindex_INTELLIGENCE">智力：{{userdatas.intelligence}}</div>
-							<div id="gameindex_AGILE">敏捷：{{userdatas.agile}}</div>
-							<div id="gameindex_POWER">力量：{{userdatas.power}}</div>
-							<div id="gameindex_PHYSICAL_ATTACK">物理攻击：{{userdatas.physical_attack}}</div>
-							<div id="gameindex_PHYSICAL_PROTECT">物理防御：{{userdatas.physical_protect}}</div>
-							<div id="gameindex_MAGIC_ATTACK">魔法攻击：{{userdatas.megic_attack}}</div>
-							<div id="gameindex_MEGIC_PROTECT">魔法防御：{{userdatas.megic_protect}}</div>
-							<div id="gameindex_ALLEXPERIENCE">剩余经验：{{userdatas.allexperience}}</div>
+
 						</div>
 						<div id="gameindex_top_right">
-							<div id="gameindex_top_headpicture">
+							<!--<div id="gameindex_top_headpicture">
 
-							</div>
-							<div id="gameindex_top_rolename">{{userdatas.rolename}}</div>
-							<div id="gameindex_top_userid">{{userdatas.belonguid}}</div>
-							<div id="gameindex_top_roleid">{{userdatas.roleid}}</div>
+							</div>-->
+
+                            <div id="gameindex_INTELLIGENCE">智力：{{userdatas.intelligence}}</div>
+                            <div id="gameindex_AGILE">敏捷：{{userdatas.agile}}</div>
+                            <div id="gameindex_POWER">力量：{{userdatas.power}}</div>
+                            <div id="gameindex_PHYSICAL_ATTACK">物理攻击：{{userdatas.physical_attack}}</div>
+                            <div id="gameindex_PHYSICAL_PROTECT">物理防御：{{userdatas.physical_protect}}</div>
+                            <div id="gameindex_MAGIC_ATTACK">魔法攻击：{{userdatas.megic_attack}}</div>
+                            <div id="gameindex_MEGIC_PROTECT">魔法防御：{{userdatas.megic_protect}}</div>
+                            <div id="gameindex_ALLEXPERIENCE">剩余经验：{{userdatas.remainexperience}}</div>
 
 						</div>
 
@@ -187,16 +186,19 @@
 					<h1 class='title'>野怪界面</h1>
 				</header>
 				<div class="content" id="monster_content">
-					<div class="button monster_yeguai" v-for="monster in monsters" v-bind:id="monster.gamemonsterId">
+					<div class="monster_button button monster_yeguai" v-for="monster in monsters" v-bind:id="monster.monsterid">
 						<div class="monster_yeguai_monstername">
 							{{monster.monstername}}
 						</div>
-						<div class="button button-round monster_yeguai_monsterattack" v-on:click="vue_monster_attack(monster.gamemonsterId)">
+						<div class="monster_button button button-round monster_yeguai_monsterattack" v-on:click="vue_monster_attack(monster.monsterid)">
 							攻击
 						</div>
-						<div class="button button-round monster_yeguai_monsterguaji">
+						<div class="monster_button button button-round monster_yeguai_monsterguaji">
 							挂机
 						</div>
+                        <div class="monster_button button button-round monster_yeguai_monsterguaji">
+                            {{monster.monsterlevel}}  级
+                        </div>
 					</div>
 
 					<div id="monster_message">
@@ -263,7 +265,13 @@
 
 		<!-- popup, panel 等放在这里 -->
 		<!--<div class="panel-overlay"></div>-->
+        <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+        <script type="text/javascript">
+            $youziku.load("body", "a0e295b1878143a98dbb3f4cebc3aac1", "hdjxingshu");
 
+            $youziku.draw(0);
+            $youziku.submit();
+        </script>
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 			console.log($.device);
@@ -349,6 +357,8 @@
 		<script type='text/javascript' src='/resources/views/js/gameindex.js' charset='utf-8'></script>
 		<script type='text/javascript' src='/resources/views/js/fuben.js' charset='utf-8'></script>
 		<script type='text/javascript' src='/resources/views/js/monster.js' charset='utf-8'></script>
+
+
 	</body>
 
 </html>

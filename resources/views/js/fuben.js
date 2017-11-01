@@ -53,8 +53,7 @@ function Fuben() {
 function gotofubenlist(fubenid){
 	console.log("调往怪物list页面"+fubenid);
 	$.router.load('#monster');
-	var monsterc=new Monster();
-	monsterc.monster_tosetmonsterdata(fubenid);
+	tempfubenid=fubenid;
 }
 
 function fuben_tosetfubendata(){
@@ -65,6 +64,8 @@ function fuben_tosetfubendata(){
 		//console.log("返回的状态码" + JSON.parse(response).status);
 		if(JSON.parse(response).status==200){
 			fuben_vue.fubens=JSON.parse(response).pdlist.data;
+            $youziku.submit();
+            console.log('在加载字体');
 		}
 		
 	});
