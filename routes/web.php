@@ -30,9 +30,8 @@ Route::any('/apigamerole/sessionget', 'UserController@sessionget');
 Route::any('/apigamefuben/list', 'UserController@fubenlist');
 Route::any('/apigamemonster/list', 'UserController@monsterlist');
 Route::any('/apigamemonster/setroledata', 'UserController@setroledata');
-
 Route::any('/apigame/role_attack', 'GameController@roleattack');
-
+Route::any('/apigamerole/refresh', 'UserController@refreshrole');
 
 
 

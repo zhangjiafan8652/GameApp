@@ -268,7 +268,6 @@
         <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
         <script type="text/javascript">
             $youziku.load("body", "a0e295b1878143a98dbb3f4cebc3aac1", "hdjxingshu");
-
             $youziku.draw(0);
             $youziku.submit();
         </script>

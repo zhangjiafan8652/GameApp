@@ -47,11 +47,33 @@ var gameindex_vue = new Vue({
 	}
 });
 
+//刷新角色信息
 function gameIndex_setroledata(pddata) {
 	console.log(pddata);
 	console.log('这是？');
 	gameindex_vue.userdatas = pddata;
-	
+    $.post(refreshroleurl, { uid: '123', password: '123' }, function(response) {
+        // process response
+        console.log(response);
+        // JSON.parse(response);
+        console.log("返回的状态码" + JSON.parse(response).status);
+        if(JSON.parse(response).status == 200) {
+            $.toast(JSON.parse(response).message);
+            $.router.load('#loginpage');
+            //showlogin();
+
+        } else if(JSON.parse(response).status == 201) {
+            //$.toast(JSON.parse(response).message);
+            console.log("登陆获得的role"+JSON.parse(response).mgamerole);
+            //设置全局gamerole对象
+            gamerole = JSON.parse(response).mgamerole;
+            gameindex_vue.userdatas = gamerole;
+          //  $.router.load('#gameindex'); //mgameindex.gameindex_tosetmonsterdata();
+        }else if (JSON.parse(response).status == 400){
+
+            $.toast(JSON.parse(response).message);
+        }
+    });
 	//console.log(vue);
 
 }
@@ -63,7 +85,7 @@ function GameIndex() {
 	this.init = initGameindex;
 
 };
-
+//初始化首页信息
 function initGameindex() {
 	console.log("初始化游戏首页信息");
 	if(gamerole.roleid == 0) {

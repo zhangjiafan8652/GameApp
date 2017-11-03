@@ -10,7 +10,7 @@ use App\Http\Model\GameUser;
 use App\Http\Model\GameFuben;
 use App\Http\Controllers\Admin\CommonController;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\Log;
 
 class UserController extends CommonController
 {
@@ -72,6 +72,29 @@ class UserController extends CommonController
             return $config;
     }
 
+    //刷新玩家数据接口
+    public function refreshrole()
+    {
+        $reuid=session('uid');
+        $mgameRole=GameRole::where('userid', $reuid)->get()[0];
+        //  echo '账号'.($mgameRole);
+        Log::info('刷新角色信息'.$mgameRole);
+        if (empty($mgameRole)){
+
+            $this->gameresponse["status"]="200";
+            $this->gameresponse["message"]="登陆过期，请重新登陆";
+            return json_encode($this->gameresponse);
+
+        }else{
+            $this->gameresponse["status"]="201";
+            $this->gameresponse["message"]="刷新角色信息成功";
+            $this->gameresponse["mgamerole"]=$mgameRole;
+            return json_encode($this->gameresponse);
+
+        }
+
+        return $this->gameresponse;
+    }
 
     //创建角色获取角色职业
     public function profession()
